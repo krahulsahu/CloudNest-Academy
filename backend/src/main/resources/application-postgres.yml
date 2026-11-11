@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/academy}
+    username: ${DB_USER:academy}
+    password: ${DB_PASSWORD:academy}

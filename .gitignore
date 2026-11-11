@@ -1,0 +1,10 @@
+node_modules/
+dist/
+target/
+data/
+uploads/
+.env
+*.log
+.idea/
+.vscode/
+.DS_Store

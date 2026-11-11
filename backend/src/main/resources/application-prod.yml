@@ -1,0 +1,9 @@
+# Production: all secrets come from environment variables / AWS Secrets Manager.
+app:
+  dev-show-otp: false
+  payments:
+    mock-enabled: false
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update   # replace with Flyway migrations before go-live

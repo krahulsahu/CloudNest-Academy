@@ -1,0 +1,35 @@
+# Full stack with PostgreSQL. Run: docker compose up --build   then open http://localhost:3000
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: academy
+      POSTGRES_USER: academy
+      POSTGRES_PASSWORD: academy
+    volumes: [db:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U academy"]
+      interval: 5s
+      retries: 10
+  backend:
+    build: ./backend
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_URL: jdbc:postgresql://db:5432/academy
+      DB_USER: academy
+      DB_PASSWORD: academy
+      FRONTEND_URL: http://localhost:3000
+      UPLOAD_DIR: /uploads
+      JWT_SECRET: change-me-to-a-long-random-secret-of-64-characters-minimum-please
+      MEDIA_SECRET: change-me-media-secret
+    volumes: [uploads:/uploads]
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["8080:8080"]
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["3000:80"]
+volumes:
+  db:
+  uploads:
