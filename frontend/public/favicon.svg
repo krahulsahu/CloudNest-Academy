@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Left Diamond: Green -->
+  <rect x="9" y="22" width="20" height="20" rx="4.5" transform="rotate(45 19 32)" fill="#22c55e" stroke="#ffffff" stroke-width="2.5" />
+  <!-- Right Diamond: Amber -->
+  <rect x="35" y="22" width="20" height="20" rx="4.5" transform="rotate(45 45 32)" fill="#f59e0b" stroke="#ffffff" stroke-width="2.5" />
+  <!-- Center Diamond: Sky Blue (elevated) -->
+  <rect x="19" y="19" width="26" height="26" rx="5.5" transform="rotate(45 32 32)" fill="#38bdf8" stroke="#ffffff" stroke-width="3" />
+</svg>

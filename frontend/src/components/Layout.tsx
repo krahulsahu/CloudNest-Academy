@@ -8,7 +8,7 @@ import { toast, useCurrency } from '../util';
 export function Brand() {
   return (
     <span className="brand">
-      <img src="/logo.png" alt="Logo" className="brand-img" onError={(e) => { (e.target as HTMLElement).style.display = 'none'; }} />
+      <span className="brand-mark"><i /><i /><i /></span>
       <span className="brand-text">CloudNest<small>ACADEMY</small></span>
     </span>
   );
